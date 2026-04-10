@@ -2,7 +2,7 @@
 Tests for models.
 """
 from django.test import TestCase
-from django.contrib.auth import get_user_model  # references our custom user model.
+from django.contrib.auth import get_user_model  # references CustomUserModel.
 
 
 class ModelTests(TestCase):
@@ -18,7 +18,7 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(user.email, email)
-        self.assertTrue(user.check_password(password))  # checks through the hash.
+        self.assertTrue(user.check_password(password))
 
     def test_new_user_email_normalized(self):
         """Test email normalized for new users."""
